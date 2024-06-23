@@ -1,0 +1,124 @@
+---
+import MemberCard from "./MemberCard.astro";
+interface Member {
+  name: string;
+  email?: string;
+  degree: string;
+  position: string;
+  avatar?: string;
+}
+
+const members: Member[] = [
+  {
+    name: 'Maria José Bouciguez',
+    email: 'mjbouci@fio.unicen.edu.ar',
+    degree: 'Ing. de Sistemas, Prof. de Informática',
+    position: 'Director',
+    avatar: `${import.meta.env.BASE_URL}/members/maria-jose-bouciguez.webp`,
+  },
+  {
+    name: 'Fernando Martin',
+    email: 'fernando.martin@fio.unicen.edu.ar',
+    degree: 'Ing. Industrial',
+    position: 'Subdirector',
+    avatar: `${import.meta.env.BASE_URL}/members/fernando-martin.webp`,
+  },
+  {
+    name: 'Tomás Goñi',
+    email: '',
+    degree: 'Becario, Estudiante en Ing. Industrial',
+    position: 'Coordinador de calidad',
+    avatar: `${import.meta.env.BASE_URL}/members/tomas-goni.webp`,
+  },
+  {
+    name: 'Ignacio López Vercesi',
+    email: 'ignaciolopez.fio@gmail.com',
+    degree: 'Becario, Estudiante en Ing. Electromecánica',
+    position: 'Técnico en desarrollo',
+    avatar: `${import.meta.env.BASE_URL}/members/ignacio-lopez-vercesi.webp`,
+  },
+  {
+    name: 'Bernardo Strupp',
+    email: 'struppmbernardo@gmail.com',
+    degree: 'Becario, Estudiante en Ing. Industrial',
+    position: 'Multimedial',
+    avatar: `${import.meta.env.BASE_URL}/members/bernardo-strupp.webp`,
+  },
+  {
+    name: 'Julio César Biset',
+    email: 'julio.biset@fio.unicen.edu.ar ',
+    degree: 'Ing. de Sistemas, Prof. de Informática',
+    position: 'Coordinador en Tecnologías Educativas. Referente en Tecnología Educativa en Seguridad e Higiene',
+    avatar: `${import.meta.env.BASE_URL}/members/julio-cesar-biset.webp`,
+  },
+  {
+    name: 'Mariela Striebeck',
+    email: 'ms.trie234@gmail.com ',
+    degree: 'Ing.Civil. Ing. en Seguridad e Higiene',
+    position: 'Referente en Tecnología Educativa en Ciencias Básicas',
+    avatar: `${import.meta.env.BASE_URL}/members/mariela-striebeck.webp`,
+  },
+  {
+    name: 'Macarena Menón',
+    email: '',
+    degree: 'Ingeniera Civil',
+    position: 'Referente en Tecnología Educativa en Ing. Civil y Agrimensura',
+  },
+  {
+    name: 'Milagros Varela',
+    email: '',
+    degree: 'Ingeniera Civil. Magister en Infraestructuras Portuarias',
+    position: 'Referente en Tecnología Educativa en Civil y Agrimensura',
+  },
+  {
+    name: 'María Fernanda Laborde',
+    email: 'mfernandalaborde@gmail.com',
+    degree: 'Dr. en Ing. con Mención en Tecnología Química. Ing. Química',
+    position: 'Referente en Tecnología Educativa en Ing. Química y Tecnología de los alimentos',
+    avatar: `${import.meta.env.BASE_URL}/members/maria-fernanda-laborde.webp`,
+  },
+  {
+    name: 'Gisele Portela',
+    email: 'gportela@fio.unicen.edu.ar ',
+    degree: 'Dr. en Ing. con Mención en Tecnología Química. Ing. Química',
+    position: 'Referente en Tecnología Educativa en Ing. Química y Tecnología de los alimentos',
+    avatar: `${import.meta.env.BASE_URL}/members/gisela-portela.webp`,
+  },
+  {
+    name: 'Simón Garcia',
+    email: 'simon.garcia1717@hotmail.com',
+    degree: 'Ing. Industrial',
+    position: 'Referente en Tecnología Educativa en Ing. Industrial',
+    avatar: `${import.meta.env.BASE_URL}/members/simon-garcia.webp`,
+  },
+  {
+    name: 'Luciano Villalba',
+    email: '',
+    degree: 'Dr. en Ciencias Ambientales. Ing. Industrial. Becario postdoctoral de CONICET',
+    position: 'Referente en Tecnología Educativa en Ing. Industrial',
+  },
+]
+---
+
+
+<section class="text-gray-600 body-font" id="nuestro-equipo">
+  <div class="container px-5 py-12 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1
+        class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest"
+      >
+        NUESTRO EQUIPO
+      </h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+        El programa está conformado por un equipo interdisciplinario que trabaja de manera colaborativa buscando alentar, atender y brindar las mejores respuestas en cuanto a propuestas educativas y desarrollos tecnológicos que desde la Facultad de Ingeniería así lo requieran.
+      </p>
+    </div>
+    <div class="flex flex-wrap -m-4">
+      {
+          members.map((member, index) => (
+              <MemberCard member={member} key={`member_${index}`} />
+          ))
+      }
+    </div>
+  </div>
+</section>
