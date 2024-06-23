@@ -6,5 +6,4 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [tailwind()],
   site: 'https://virtual.fio.unicen.edu.ar',
-  base: 'https://virtual.fio.unicen.edu.ar',
 });
