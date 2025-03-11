@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <header class="text-gray-600 body-font">
+  <header class="text-gray-600 body-font sticky z-50 top-0 bg-[#f7f7f7]">
     <div
       class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center"
     >
@@ -36,8 +36,9 @@ const { title } = Astro.props;
           >Sobre nosotros</a
         >
         <a class="mr-5 hover:text-gray-900" href="#nuestro-equipo"
-          >Nuestro equipo</a
-        >
+          >Nuestro equipo</a>
+        <a class="mr-5 hover:text-gray-900" href="#nuestros-servicios"
+        >Nuestros servicios</a>
         <a class="mr-5 hover:text-gray-900" href="#contactanos">Contactanos</a>
       </nav>
       <a

@@ -1,54 +1,73 @@
-# Astro Starter Kit: Basics
+# Educom - Web
 
-```sh
-npm create astro@latest -- --template basics
+## Requirements
+
+Make sure you have the following tools installed:
+
+- [Node.js](https://nodejs.org/) (version 23.1.0)
+- [npm](https://www.npmjs.com/) for dependency management
+
+## Getting Started
+
+### 1. Clone the Repository
+
+Clone this repository to your local machine:
+
+```bash
+git clone https://github.com/jbiset/educom.git
+cd educom
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+### 2. Install Dependencies
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
-
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── components/
-│   │   └── Card.astro
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+### 3. Run the script
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+This project includes some useful scripts for development and deployment.
 
-Any static assets, like images, can be placed in the `public/` directory.
+#### Development Mode
 
-## 🧞 Commands
+To start the development server, which includes hot reload and other developer tools, run the following command:
 
-All commands are run from the root of the project, from a terminal:
+```bash
+npm run dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+This will start the server on http://localhost:4321.
 
-## 👀 Want to learn more?
+#### Build for Production
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To build the application for production, run:
+
+```bash
+npm run build
+```
+
+This command will create a dist folder with optimized files ready for deployment.
+
+#### Production Preview
+
+If you want to locally preview the production build, use:
+
+```bash
+npm run preview
+```
+
+This will start a local server to preview the project in production mode.
+
+## Project Structure
+
+Here’s a quick breakdown of the main folders and files:
+
+- **src/:** Contains the project source files.
+- **pages/:** Where the site’s pages are stored.
+- **components/:** Reusable components for the project.
+- **public/:** Static files, such as images and fonts.
+- **astro.config.mjs:** Astro configuration file.
+
+## References
+
+- [Official Astro documentation](https://docs.astro.build/en/getting-started/)
