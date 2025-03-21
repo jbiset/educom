@@ -11,7 +11,7 @@
       </p>
     </div>
     <div class="lg:w-1/2 md:w-2/3 mx-auto">
-      <div class="flex flex-wrap -m-2">
+      <form action="/api/contact" method="POST" class="flex flex-wrap -m-2">
         <div class="p-2 w-1/2">
           <div class="relative">
             <label for="name" class="leading-7 text-sm text-gray-600"
@@ -52,6 +52,7 @@
         </div>
         <div class="p-2 w-full">
           <button
+              type="submit"
             class="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
             >Enviar</button
           >
@@ -71,7 +72,29 @@
             </a>
           </span>
         </div>
-      </div>
+      </form>
     </div>
   </div>
 </section>
+<script is:inline type="text/javascript">
+  document.querySelector("form").addEventListener("submit", async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+    const data = Object.fromEntries(formData.entries());
+
+    const formURL = "https://docs.google.com/forms/d/e/1FAIpQLScvVX6f4XrLTkWua6hOP28Y66Qk_svWgHJlA_5ibkZVMP1PKw/formResponse";
+
+    const response = await fetch(formURL, {
+      method: "POST",
+      body: new URLSearchParams({
+        "entry.753742617": data.name,
+        "entry.912111863": data.email,
+        "entry.1208802164": data.message,
+      }),
+      mode: "no-cors",
+    });
+
+    alert("Datos enviados a Google Sheets");
+  });
+</script>

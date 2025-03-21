@@ -1,12 +1,5 @@
 ---
-interface Member {
-    name: string;
-    email?: string;
-    degree: string;
-    position: string;
-    avatar?: string;
-}
-
+import {type Member} from "../services/members_api";
 interface Props {
     member: Member;
     key: string;
@@ -20,9 +13,9 @@ const { member, key } = Astro.props;
             class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
     >
         <img
-                alt="team"
+                alt={`Avatar de ${member.name}`}
                 class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src={member?.avatar ?? 'https://dummyimage.com/200x200'}
+                src={`${import.meta.env.BASE_URL}${member?.avatar ?? "/user-avatar.webp"}`}
         />
         <div class="flex-grow sm:pl-8">
             <h2 class="title-font font-medium text-lg text-gray-900">

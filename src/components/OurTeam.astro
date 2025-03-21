@@ -1,97 +1,8 @@
 ---
 import MemberCard from "./MemberCard.astro";
-interface Member {
-  name: string;
-  email?: string;
-  degree: string;
-  position: string;
-  avatar?: string;
-}
+import members_api, {type Member} from "../services/members_api";
 
-const members: Member[] = [
-  {
-    name: 'Maria José Bouciguez',
-    email: 'mjbouci@fio.unicen.edu.ar',
-    degree: 'Ing. de Sistemas, Prof. de Informática',
-    position: 'Director',
-    avatar: `${import.meta.env.BASE_URL}/members/maria-jose-bouciguez.webp`,
-  },
-  {
-    name: 'Fernando Martin',
-    email: 'fernando.martin@fio.unicen.edu.ar',
-    degree: 'Ing. Industrial',
-    position: 'Subdirector',
-    avatar: `${import.meta.env.BASE_URL}/members/fernando-martin.webp`,
-  },
-  {
-    name: 'Ignacio López Vercesi',
-    email: 'ignaciolopez.fio@gmail.com',
-    degree: 'Becario, Estudiante en Ing. Electromecánica',
-    position: 'Técnico en desarrollo',
-    avatar: `${import.meta.env.BASE_URL}/members/ignacio-lopez-vercesi.webp`,
-  },
-  {
-    name: 'Bernardo Strupp',
-    email: 'struppmbernardo@gmail.com',
-    degree: 'Becario, Estudiante en Ing. Industrial',
-    position: 'Multimedial',
-    avatar: `${import.meta.env.BASE_URL}/members/bernardo-strupp.webp`,
-  },
-  {
-    name: 'Julio César Biset',
-    email: 'julio.biset@fio.unicen.edu.ar ',
-    degree: 'Ing. de Sistemas, Prof. de Informática',
-    position: 'Coordinador en Tecnologías Educativas. Referente en Tecnología Educativa en Seguridad e Higiene',
-    avatar: `${import.meta.env.BASE_URL}/members/julio-cesar-biset.webp`,
-  },
-  {
-    name: 'Mariela Striebeck',
-    email: 'ms.trie234@gmail.com ',
-    degree: 'Ing.Civil. Ing. en Seguridad e Higiene',
-    position: 'Referente en Tecnología Educativa en Ciencias Básicas',
-    avatar: `${import.meta.env.BASE_URL}/members/mariela-striebeck.webp`,
-  },
-  {
-    name: 'Macarena Menón',
-    email: '',
-    degree: 'Ingeniera Civil',
-    position: 'Referente en Tecnología Educativa en Ing. Civil y Agrimensura',
-    avatar: `${import.meta.env.BASE_URL}/members/macarena-menon.webp`,
-  },
-  {
-    name: 'Milagros Varela',
-    email: '',
-    degree: 'Ingeniera Civil. Magister en Infraestructuras Portuarias',
-    position: 'Referente en Tecnología Educativa en Civil y Agrimensura',
-    avatar: `${import.meta.env.BASE_URL}/members/milagros-varela.webp`,
-  },
-  {
-    name: 'María Fernanda Laborde',
-    email: 'mfernandalaborde@gmail.com',
-    degree: 'Dr. en Ing. con Mención en Tecnología Química. Ing. Química',
-    position: 'Referente en Tecnología Educativa en Ing. Química y Tecnología de los alimentos',
-    avatar: `${import.meta.env.BASE_URL}/members/maria-fernanda-laborde.webp`,
-  },
-  {
-    name: 'Gisele Portela',
-    email: 'gportela@fio.unicen.edu.ar ',
-    degree: 'Dr. en Ing. con Mención en Tecnología Química. Ing. Química',
-    position: 'Referente en Tecnología Educativa en Ing. Química y Tecnología de los alimentos',
-    avatar: `${import.meta.env.BASE_URL}/members/gisela-portela.webp`,
-  },
-  {
-    name: 'Franco Chiodi',
-    email: 'fchiodi@fio.unicen.edu.ar',
-    degree: 'Mg. Ing.',
-    position: 'Referente en Tecnología Educativa en Ing. Industrial',
-  },
-  {
-    name: 'Espacio becario',
-    email: '',
-    degree: '',
-    position: 'Becario',
-  },
-]
+const members: Member[] = await members_api.list();
 ---
 
 
@@ -109,7 +20,7 @@ const members: Member[] = [
     </div>
     <div class="flex flex-wrap -m-4">
       {
-          members.map((member, index) => (
+          members.map((member: Member, index: number) => (
               <MemberCard member={member} key={`member_${index}`} />
           ))
       }
