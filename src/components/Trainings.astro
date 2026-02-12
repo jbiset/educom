@@ -4,22 +4,21 @@ import trainings_api, {type Training} from "../services/trainings_api";
 
 const trainings: Training[] = await trainings_api.list();
 ---
-<section class="text-gray-600 body-font" id="capacitaciones">
-  <div class="flex flex-col text-center w-full">
-    <h1
-      class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest"
-    >
-      CAPACITACIONES
-    </h1>
-    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
-      En nuestro compromiso con la educación, ofrecemos capacitaciones que
-      nutren mentes, inspiran descubrimientos y empoderan a cada individuo para
-      alcanzar su máximo potencial, construyendo así un futuro brillante y lleno
-      de oportunidades.
-    </p>
-  </div>
-  <div class="container px-5 py-24 mx-auto">
-    <div class="flex flex-wrap -mx-4 -my-8">
+<section class="relative py-20" id="capacitaciones">
+  <div class="container mx-auto px-6">
+    <div class="mx-auto flex max-w-3xl flex-col text-center">
+      <span class="text-sm font-semibold uppercase tracking-[0.3em] text-educom-navy/70">Capacitaciones</span>
+      <h1 class="mt-3 font-display text-3xl font-semibold text-educom-ink sm:text-4xl">
+        Programas que impulsan talento y actualización profesional
+      </h1>
+      <p class="mt-4 text-base leading-relaxed text-slate-600">
+        En nuestro compromiso con la educación, ofrecemos capacitaciones que
+        nutren mentes, inspiran descubrimientos y empoderan a cada individuo para
+        alcanzar su máximo potencial, construyendo así un futuro brillante y lleno
+        de oportunidades.
+      </p>
+    </div>
+    <div class="mt-12 flex flex-wrap -mx-4 -my-8">
       {
         trainings.map((training: Training) => (
             <TrainingCard data={training} />

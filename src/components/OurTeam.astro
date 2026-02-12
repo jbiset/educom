@@ -6,19 +6,18 @@ const members: Member[] = await members_api.list();
 ---
 
 
-<section class="text-gray-600 body-font" id="nuestro-equipo">
-  <div class="container px-5 py-12 mx-auto">
-    <div class="flex flex-col text-center w-full mb-20">
-      <h1
-        class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest"
-      >
-        NUESTRO EQUIPO
+<section class="bg-educom-mist/70 py-20" id="nuestro-equipo">
+  <div class="container mx-auto px-6">
+    <div class="mx-auto flex max-w-3xl flex-col text-center">
+      <span class="text-sm font-semibold uppercase tracking-[0.3em] text-educom-navy/70">Nuestro equipo</span>
+      <h1 class="mt-3 font-display text-3xl font-semibold text-educom-ink sm:text-4xl">
+        Personas comprometidas con la innovación educativa
       </h1>
-      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+      <p class="mt-4 text-base leading-relaxed text-slate-600">
         El programa está conformado por un equipo interdisciplinario que trabaja de manera colaborativa buscando alentar, atender y brindar las mejores respuestas en cuanto a propuestas educativas y desarrollos tecnológicos que desde la Facultad de Ingeniería así lo requieran.
       </p>
     </div>
-    <div class="flex flex-wrap -m-4">
+    <div class="mt-12 flex flex-wrap -m-4">
       {
           members.map((member: Member, index: number) => (
               <MemberCard member={member} key={`member_${index}`} />

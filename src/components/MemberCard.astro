@@ -10,27 +10,32 @@ const { member, key } = Astro.props;
 
 <div class="p-4 lg:w-1/2" id={key}>
     <div
-            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+            class="h-full rounded-3xl border border-white/70 bg-white p-6 shadow-soft"
     >
-        <img
-                alt={`Avatar de ${member.name}`}
-                class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4"
-                src={`${import.meta.env.BASE_URL}${member?.avatar ?? "/user-avatar.webp"}`}
-        />
-        <div class="flex-grow sm:pl-8">
-            <h2 class="title-font font-medium text-lg text-gray-900">
-                {member?.name}
-            </h2>
-            <h3 class="text-gray-500 mb-3">{member?.position}</h3>
-            <p class="mb-4">
-                {member?.degree}
-            </p>
-            <span class={`inline-flex ${member.email && member.email.length > 0 ? '' : 'hidden'}`}>
-              <a class="flex gap-2 items-center justify-start text-gray-500" href={`mailto:${member.email}`}>
-                  <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 32 32" fill="currentColor"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z"/></svg>
-                  <span>{member.email}</span>
-              </a>
-            </span>
+        <div class="flex flex-col items-center gap-6 text-center sm:flex-row sm:text-left">
+            <div class="relative flex-shrink-0">
+                <div class="absolute -right-2 -bottom-2 h-16 w-16 rounded-2xl bg-educom-lime/30"></div>
+                <img
+                        alt={`Avatar de ${member.name}`}
+                        class="relative h-36 w-36 rounded-2xl object-cover object-center"
+                        src={`${import.meta.env.BASE_URL}${member?.avatar ?? "/user-avatar.webp"}`}
+                />
+            </div>
+            <div class="flex-grow">
+                <h2 class="font-display text-xl font-semibold text-educom-ink">
+                    {member?.name}
+                </h2>
+                <h3 class="text-sm font-semibold uppercase tracking-wide text-educom-navy/70 mb-2">{member?.position}</h3>
+                <p class="mb-4 text-base text-slate-600">
+                    {member?.degree}
+                </p>
+                <span class={`inline-flex ${member.email && member.email.length > 0 ? '' : 'hidden'}`}>
+                  <a class="flex gap-2 items-center justify-start text-educom-navy hover:text-educom-navy/70" href={`mailto:${member.email}`}>
+                      <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 32 32" fill="currentColor"><path d="M28 6H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h24a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2m-2.2 2L16 14.78L6.2 8ZM4 24V8.91l11.43 7.91a1 1 0 0 0 1.14 0L28 8.91V24Z"/></svg>
+                      <span class="text-sm font-semibold">{member.email}</span>
+                  </a>
+                </span>
+            </div>
         </div>
     </div>
 </div>
