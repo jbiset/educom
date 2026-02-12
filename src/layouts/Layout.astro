@@ -12,7 +12,11 @@ const { title } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="description" content="Web Educom" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href={`${import.meta.env.BASE_URL}/favicon.png`} />
+    <link rel="icon" type="image/x-icon" href={`${import.meta.env.BASE_URL}/favicon.ico`} />
+    <link rel="icon" type="image/png" sizes="32x32" href={`${import.meta.env.BASE_URL}/favicon-32x32.png`} />
+    <link rel="icon" type="image/png" sizes="16x16" href={`${import.meta.env.BASE_URL}/favicon-16x16.png`} />
+    <link rel="apple-touch-icon" href={`${import.meta.env.BASE_URL}/apple-touch-icon.png`} />
+    <link rel="manifest" href={`${import.meta.env.BASE_URL}/site.webmanifest`} />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
@@ -24,7 +28,7 @@ const { title } = Astro.props;
         href="/"
         class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0"
       >
-        <img src={`${import.meta.env.BASE_URL}/logo.png`} alt="logo educom" height="100" width="228" />
+        <img src={`${import.meta.env.BASE_URL}/logo.webp`} alt="logo educom" height="80" width="293" />
       </a>
       <nav
         class="md:ml-auto flex flex-wrap items-center text-base justify-center"
