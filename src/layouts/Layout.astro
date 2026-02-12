@@ -27,36 +27,66 @@ const { title } = Astro.props;
     <title>{title}</title>
   </head>
   <body class="bg-slate-50 text-educom-ink font-body antialiased">
-    <header class="sticky top-0 z-50 border-b border-slate-200/70 bg-white/90 backdrop-blur">
-      <div class="container mx-auto flex flex-wrap items-center gap-4 px-6 py-4">
-        <a href="/" class="flex items-center">
-          <img src={`${import.meta.env.BASE_URL}/logo.webp`} alt="logo educom" height="70" width="260" class="h-12 w-auto" />
-        </a>
-        <nav class="md:ml-auto flex flex-wrap items-center justify-center gap-5 text-sm font-semibold uppercase tracking-wide text-slate-600">
-          <a class="hover:text-educom-navy transition-colors" href="#capacitaciones">Capacitaciones</a>
-          <a class="hover:text-educom-navy transition-colors" href="#sobre-nosotros">Sobre nosotros</a>
-          <a class="hover:text-educom-navy transition-colors" href="#nuestro-equipo">Nuestro equipo</a>
-          <a class="hover:text-educom-navy transition-colors" href="#nuestros-servicios">Nuestros servicios</a>
-          <a class="hover:text-educom-navy transition-colors" href="#contactanos">Contactanos</a>
-        </nav>
-        <a
-          class="inline-flex items-center gap-2 rounded-full bg-educom-navy px-4 py-2 text-sm font-semibold text-white shadow-soft transition hover:-translate-y-0.5 hover:bg-educom-navy/90"
-          href="https://www.fio.unicen.edu.ar"
-          target="_blank"
-        >
-          Facultad de Ingeniería - Olavarría
-          <svg
-            fill="none"
-            stroke="currentColor"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            class="w-4 h-4"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5 12h14M12 5l7 7-7 7"></path>
-          </svg>
-        </a>
+    <header class="sticky top-0 z-50 border-b border-[#004171]/10 bg-white/95 backdrop-blur">
+      <div class="container mx-auto px-6 py-4">
+        <div class="flex items-center justify-between gap-4">
+          <a href="/" class="flex items-center">
+            <img src={`${import.meta.env.BASE_URL}/logo.webp`} alt="logo educom" height="70" width="260" class="h-11 w-auto md:h-12" />
+          </a>
+          <div class="hidden flex-1 items-center gap-4 lg:flex">
+            <nav class="flex flex-1 items-center justify-center gap-4 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600">
+              <a class="whitespace-nowrap hover:text-[#004171] transition-colors" href="#capacitaciones">Capacitaciones</a>
+              <a class="whitespace-nowrap hover:text-[#004171] transition-colors" href="#sobre-nosotros">Sobre nosotros</a>
+              <a class="whitespace-nowrap hover:text-[#004171] transition-colors" href="#nuestro-equipo">Nuestro equipo</a>
+              <a class="whitespace-nowrap hover:text-[#004171] transition-colors" href="#nuestros-servicios">Nuestros servicios</a>
+              <a class="whitespace-nowrap hover:text-[#004171] transition-colors" href="#contactanos">Contactanos</a>
+            </nav>
+            <a
+              class="inline-flex items-center gap-2 rounded-full border border-[#004171]/20 px-3 py-1.5 text-xs font-semibold text-[#004171] transition hover:bg-[#004171] hover:text-white"
+              href="https://www.fio.unicen.edu.ar"
+              target="_blank"
+            >
+              FIO Olavarría
+              <svg
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                class="w-4 h-4"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          <details class="relative lg:hidden">
+            <summary class="list-none inline-flex items-center gap-2 rounded-full border border-[#004171]/20 bg-white px-3 py-2 text-sm font-semibold text-[#004171]">
+              Menú
+              <span class="inline-flex h-6 w-6 items-center justify-center rounded-full bg-[#004171]/10">
+                <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M6 9l6 6 6-6"></path>
+                </svg>
+              </span>
+            </summary>
+            <div class="absolute right-0 mt-3 w-[17rem] rounded-2xl border border-[#004171]/12 bg-white p-4 shadow-soft">
+              <nav class="flex flex-col gap-3 text-xs font-semibold uppercase tracking-[0.18em] text-slate-600">
+                <a class="hover:text-[#004171]" href="#capacitaciones">Capacitaciones</a>
+                <a class="hover:text-[#004171]" href="#sobre-nosotros">Sobre nosotros</a>
+                <a class="hover:text-[#004171]" href="#nuestro-equipo">Nuestro equipo</a>
+                <a class="hover:text-[#004171]" href="#nuestros-servicios">Nuestros servicios</a>
+                <a class="hover:text-[#004171]" href="#contactanos">Contactanos</a>
+              </nav>
+              <a
+                class="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-full border border-[#004171]/20 px-4 py-2 text-xs font-semibold text-[#004171] transition hover:bg-[#004171] hover:text-white"
+                href="https://www.fio.unicen.edu.ar"
+                target="_blank"
+              >
+                Facultad de Ingeniería - Olavarría
+              </a>
+            </div>
+          </details>
+        </div>
       </div>
     </header>
 
@@ -85,6 +115,9 @@ const { title } = Astro.props;
   <style is:global>
     html {
       scroll-behavior: smooth;
+    }
+    body {
+      overflow-x: hidden;
     }
   </style>
 
