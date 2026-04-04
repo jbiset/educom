@@ -1,4 +1,6 @@
 ---
+import "../styles/global.css";
+
 interface Props {
   title: string;
 }
@@ -111,15 +113,4 @@ const { title } = Astro.props;
       </div>
     </footer>
   </body>
-
-  <style is:global>
-    html {
-      scroll-behavior: smooth;
-    }
-    body {
-      overflow-x: hidden;
-    }
-  </style>
-
-
 </html>

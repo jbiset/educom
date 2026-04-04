@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --color-educom-navy: #004171;
+  --color-educom-lime: #96ad2f;
+  --color-educom-mist: #e9eef3;
+  --color-educom-ink: #0b1b2b;
+
+  --font-display: "Outfit", sans-serif;
+  --font-body: "Source Sans 3", sans-serif;
+
+  --shadow-soft: 0 20px 60px -30px rgba(0, 65, 113, 0.45);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}

@@ -1,4 +1,4 @@
-import { z } from "astro:content";
+import { z } from "astro/zod";
 
 const TRAINING_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSI99VpoHBuRP3jQYRJjKonnTGybQGefkH449LOjkLZu7MoHmG8FuFNcZhskg0odzyn83lZ2zdLkXNJ/pub?gid=0&single=true&output=tsv";

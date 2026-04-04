@@ -1,4 +1,4 @@
-import { z } from "astro:content";
+import { z } from "astro/zod";
 
 const MEMBERS_URL =
   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSwANBgFg7HkGM9lspBNL_0Dg7IwS_E86fSSwwHHRPXI1indFQ-yfM18F9WCcXhr1KWWmzowkujyzOF/pub?output=tsv";
